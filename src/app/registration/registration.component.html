@@ -1,0 +1,89 @@
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+<!------ Include the above in your HEAD tag ---------->
+<div style="text-align: center">
+    <h1>{{message}}</h1>
+</div>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-6">
+            <form>
+                <fieldset>
+                    <legend class="text-center">Valid information is required to register. <span class="req"><small>
+                                required *</small></span></legend>
+
+                    <div class="form-group">
+                        <label for="Name"><span class="req">* </span> Name: <small>This will be your login user
+                                name</small> </label>
+                        <input required type="text" [(ngModel)]="user.name" name="name" id="name"
+                            class="form-control phone" maxlength="28" placeholder="Enter your fullname..." />
+                    </div>
+
+                    <input type="radio" id="cpf" [(ngModel)]="user.type" name="typePf" value="pf" checked>
+                    <label for="cpf">cpf</label><br>
+                    <input type="radio" id="cnpj" [(ngModel)]="user.type" name="typePj" value="pj">
+                    <label for="cnpj">cnpj</label><br>
+
+                    <div class="form-group" >
+                        <label for="cpf"><span class="req">* </span> CPF: </label>
+                        <input class="form-control" type="number" [(ngModel)]="user.cpf" name="cpf" required
+                            placeholder="Enter valid cpf address" />
+                        <div ></div>
+                    </div>
+
+                    <div class="form-group" >
+                        <label for="cnpj"><span class="req">* </span> CNPJ: </label>
+                        <input class="form-control" type="number" [(ngModel)]="user.cnpj" name="cnpj" required
+                               placeholder="Enter valid cnpj address" />
+                        <div id="errFirst"></div>
+                    </div>
+
+                    <div class="form-group" >
+                        <label ><span class="req">* </span> RG: </label>
+                        <input class="form-control" type="number" [(ngModel)]="user.rg" name="rg" required
+                               placeholder="Enter valid rg address" />
+                        <div ></div>
+                    </div>
+
+                    <div class="form-group" >
+                        <label ><span class="req">* </span> IES: </label>
+                        <input class="form-control" type="number" [(ngModel)]="user.ies" name="ies" required
+                               placeholder="Enter valid ies address" />
+                        <div ></div>
+                    </div>
+
+                    <div class="form-group">
+                        <label><span class="req">* </span> Date : </label>
+                        <input class="form-control" type="date" [(ngModel)]="user.dataRegistry" name="dataRegistry" id="txt"
+                            placeholder="Date" required />
+                        <div ></div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="active"><span class="req">* </span> active: </label>
+                        <input  type="radio" [(ngModel)]="user.active" name="active" value=true
+                            id="active"/>
+                        <div class="status" id="status"></div>
+                    </div>
+
+                    <div class="form-group" >
+                        <label ><span class="req">* </span> Telefone number: </label>
+                        <input class="form-control" type="number" [(ngModel)]="user.telNumber" name="telNumber" required
+                               placeholder="Enter valid telefone number" />
+                        <div ></div>
+                    </div>
+                    <div class="form-group">
+                        <input class="btn btn-success" type="submit" name="submit_reg" value="Register" (click)="registerNow()">
+                    </div>
+                </fieldset>
+            </form><!-- ends register form -->
+            <!-- second for to fiter user-->
+        </div><!-- ends col-6 -->
+
+    </div>
+</div>
+
+
+
